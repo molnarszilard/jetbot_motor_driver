@@ -30,3 +30,4 @@ Or you can change the content of robot.py. (Note if you create a new file --ex: 
 
 The code should work after a restart of the jupyter (if the jupyter is auromatically run at the startup, then restart the Jetson). OR in jupyter open a terminal and copy the modified files in '/usr/local/lib/python3.6/dist-packages/jetbot-0.4.3-py3.6.egg/jetbot/'. After you installed qwiic, I recommend to restart your jetson, after if you want to rewrite something in the code, then you can simply copy the modified file inside the given directory.
 
+Initially, the jetbot drivers are written with small values (around 0 and 1), this code requires 0-255 range, so do a little bit of experiment in this files (althought, I have tried to implement an 'if' for this case.)
