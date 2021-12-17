@@ -10,20 +10,20 @@ I have done the following:
 
 downloaded the jetbot repo:
 
-'''git clone https://github.com/hailoclu/jetbot.git'''
+git clone https://github.com/hailoclu/jetbot.git
 
 or 
 
-'''git clone https://github.com/NVIDIA-AI-IOT/jetbot'''
+git clone https://github.com/NVIDIA-AI-IOT/jetbot
 
 If you project is run inside a jupyter lab/notebook, then run the following using the integrated terminal.
 Clone the qwiic repo inside jetbot/jetbot/:
 
-'''git clone https://github.com/sparkfun/Qwiic_SCMD_Py.git'''
+git clone https://github.com/sparkfun/Qwiic_SCMD_Py.git
 
-'''cd Qwiic_SCMD_Py'''
+cd Qwiic_SCMD_Py
 
-'''pip3 install sparkfun-qwiic-scmd'''
+pip3 install sparkfun-qwiic-scmd
 
 Inside jetbot/jetbot there is a file called robot.py. If you want to keep it, then simply create a new file: robot2.py as the file given by this repo.
 Or you can change the content of robot.py. (Note if you create a new file --ex: robot2.py-- you have to add it in the __init__.py, and inside your notebook you have to include as such.)
