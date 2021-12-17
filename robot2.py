@@ -27,45 +27,45 @@ class Robot2(SingletonConfigurable):
         time.sleep(.250)
         
     def set_motors(self, left_speed, right_speed):
-        if left_speed<10:
-            left_speed*=1000
+        if left_speed<2.1:
+            left_speed*=125
         if left_speed>255:
-            left_speed=254
-        if right_speed<10:
-            right_speed*=1000
+            left_speed=255
+        if right_speed<2.1:
+            right_speed*=125
         if right_speed>255:
-            right_speed=254
+            right_speed=255
         self.myMotor.set_drive(self.R_MTR,self.FWD,right_speed)
         self.myMotor.set_drive(self.R_MTR,self.FWD,left_speed)
         time.sleep(.1)
         
     def forward(self, speed=1.0, duration=None):
-        if speed<10:
-            speed*=150
+        if speed<2.1:
+            speed*=125
         if speed>255:
             speed=255
         self.myMotor.set_drive(self.R_MTR,self.FWD,speed)
         self.myMotor.set_drive(self.L_MTR,self.FWD,speed)
 
     def backward(self, speed=1.0):
-        if speed<10:
-            speed*=150
+        if speed<2.1:
+            speed*=125
         if speed>255:
             speed=255
         self.myMotor.set_drive(self.R_MTR,self.BWD,speed)
         self.myMotor.set_drive(self.L_MTR,self.BWD,speed)
 
     def left(self, speed=1.0):
-        if speed<10:
-            speed*=150
+        if speed<2.1:
+            speed*=125
         if speed>255:
             speed=255
         self.myMotor.set_drive(self.R_MTR,self.FWD,speed)
         self.myMotor.set_drive(self.L_MTR,self.BWD,speed)
 
     def right(self, speed=1.0):
-        if speed<10:
-            speed*=150
+        if speed<2.1:
+            speed*=125
         if speed>255:
             speed=255
         self.myMotor.set_drive(self.R_MTR,self.BWD,speed)
@@ -82,8 +82,15 @@ class Robot2(SingletonConfigurable):
         for speed in range(20,255):
             print(speed)
             self.myMotor.set_drive(self.R_MTR,self.FWD,speed)
+            self.myMotor.set_drive(self.L_MTR,self.FWD,speed)
             time.sleep(.05)
         for speed in range(254,20, -1):
             print(speed)
             self.myMotor.set_drive(self.R_MTR,self.FWD,speed)
+            self.myMotor.set_drive(self.L_MTR,self.FWD,speed)
             time.sleep(.05)
+            
+    def disable(self):
+        self.stop()
+        print("Ending example.")
+        self.myMotor.disable()
