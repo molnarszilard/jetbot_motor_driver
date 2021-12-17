@@ -1,0 +1,3 @@
+[submodule "Qwiic_SCMD_Py"]
+	path = Qwiic_SCMD_Py
+	url = https://github.com/sparkfun/Qwiic_SCMD_Py.git
